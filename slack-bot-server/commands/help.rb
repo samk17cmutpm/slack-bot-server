@@ -17,7 +17,7 @@ EOS
         client.say(channel: data.channel, text: [HELP, SlackBotServer::INFO].join("\n"))
         client.say(channel: data.channel, gif: 'help')
         logger.info "HELP: #{client.owner}, user=#{data.user}"
-      end
+      end 
     end
   end
 end
