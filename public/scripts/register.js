@@ -33,6 +33,7 @@ $(document).ready(function() {
   // Slack OAuth
   var code = $.url('?code')
   if (code) {
+    console.log ("sam")
     SlackBotServer.message('Working, please wait ...');
     $('#register').hide();
     $.ajax({
