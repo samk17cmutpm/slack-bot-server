@@ -1,3 +1,5 @@
 require 'slack-bot-server/commands/help'
 require 'slack-bot-server/commands/whoami'
 require 'slack-bot-server/commands/addfood'
+require 'slack-bot-server/commands/choose'
+require 'slack-bot-server/commands/finish'
