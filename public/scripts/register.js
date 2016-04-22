@@ -32,6 +32,8 @@ $(document).ready(function() {
 
   // Slack OAuth
   var code = $.url('?code')
+  console.log(code)
+  // var code = 'https://novahub-slack-bot-server.herokuapp.com/?code'
   if (code) {
     console.log ("sam")
     SlackBotServer.message('Working, please wait ...');

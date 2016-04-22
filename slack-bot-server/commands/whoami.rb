@@ -10,7 +10,16 @@ module SlackBotServer
       def self.call(client, data, _match)
         team_id = data.team
         foods = Food.all
+
         available_menu = Available.find_by(:team_id => team_id)
+        if available_menu.equal?(nil)
+          available_temp = {
+            :team_id => team_id,
+            :available => true
+          }
+          available_menu = Available.new available_temp
+          available_menu.save
+        end
         if available_menu.available
           token = loop do
             random_token = SecureRandom.urlsafe_base64(nil, false)
