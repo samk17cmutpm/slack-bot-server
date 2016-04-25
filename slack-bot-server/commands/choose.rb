@@ -11,7 +11,7 @@ module SlackBotServer
           if order.equal?(0)
             client.say(channel: data.channel, text: "sorry <@#{data.user}>,wrong command, you should type like this choose 1")
           else
-            foods = Food.all
+            foods = Food.where(:team_id => team_id)
             food_name = foods.at(order - 1).name
             order_temp = {
               :menu_id => available_menu.menu_id,
