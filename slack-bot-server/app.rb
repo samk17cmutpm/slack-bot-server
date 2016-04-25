@@ -70,6 +70,7 @@ module SlackBotServer
       team = Team.find_or_create_from_env!
       logger.info "Automatically migrated team: #{team}."
       logger.warn "You should unset ENV['SLACK_API_TOKEN']."
+      logger.info Team.all.to_json
     end
 
     def purge_inactive_teams!

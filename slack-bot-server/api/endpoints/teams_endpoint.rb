@@ -24,7 +24,6 @@ module Api
         sort Team::SORT_ORDERS
         get do
           teams = Team.all
-          puts teams.json
           teams = teams.active if params[:active]
           teams = paginate_and_sort_by_cursor(teams, default_sort_order: '-_id')
           present teams, with: Api::Presenters::TeamsPresenter
